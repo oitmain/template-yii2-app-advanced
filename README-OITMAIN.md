@@ -14,6 +14,28 @@ composer update
 php init
 #php yii migrate
 ```
+
+Deploy to Github
+===============================
+### 1. Initialize git project
+```sh
+git init .
+git add -A
+git commit -m 'Initial commit'
+```
+### 2. Create repository
+```sh
+API_TOKEN=github_token
+REPO_NAME=some_repo
+curl -H "Authorization: token $API_TOKEN" https://api.github.com/orgs/oitmain/repos -d '{"private":true,"name":"'"$REPO_NAME"'"}'
+```
+### 2. Push
+```sh
+REPO_NAME=some_repo
+git remote add origin https://github.com/oitmain/$REPO_NAME
+git push -u origin master
+```
+
 C9 Apache 2 configuration for Yii2 Advanced App
 =============================== 
 https://github.com/oitmain/c9-yii2-advanced-apache2-conf
@@ -33,3 +55,6 @@ git fetch upstream
 git checkout master
 git merge upstream/master
 ```
+
+
+
