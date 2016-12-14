@@ -29,7 +29,7 @@ API_TOKEN=github_token
 REPO_NAME=some_repo
 curl -H "Authorization: token $API_TOKEN" https://api.github.com/orgs/oitmain/repos -d '{"private":true,"name":"'"$REPO_NAME"'"}'
 ```
-### 2. Push
+### 3. Push
 ```sh
 REPO_NAME=some_repo
 git remote add origin https://github.com/oitmain/$REPO_NAME
